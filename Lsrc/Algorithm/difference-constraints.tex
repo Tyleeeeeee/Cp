@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{Difference constraints}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+Given a set of $a_i-b_j\le c_k$,determine does it exist a set of $a_i$ and $b_i$ to fulfill the constraints
+
+\noindent \textbf{Algorithm}\\
+The idea is come from shortest path,if you regard $a_i$ as $d_v$,and $b_i$ as $d_u$ and $c_k$ as $w$,then you will get $d_v\le d_u+w$,in a graph given source $s$,at the end for every vertex $(u,v)$ and $u\rightarrow v$ we have $d_u+w\ge d_v$,so this is completely same as the problem above,so given $a_i-b_j\le c_k$ we can just make an edge $j\rightarrow i$ with weight $c_k$,since the weight may be negative so we need spfa/bellman ford,if exist negative cycle,it can be show that no such solution(contradiction),at the end,set of $d_i$ is one of the set of solution to make the constraints establish,and also it can be extend,if we need to restrict $L\le a_i \le R$ then we can use a special node $z$,and define $a_z+L\le a_i \le R+a_z$  and get two constraints,$a_z-a_i\le -L$ and $a_i-a_z\le R$,and after than let $d_z\ne 0$ then all vertex $i$ including $z$ to do $d_i+=d_z$,then it can be show that this is one of the solution
+
+\noindent \textbf{You need to know after this:}\\
+\end{document}

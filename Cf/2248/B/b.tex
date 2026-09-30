@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2248 B}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2248/problem/B
+
+\noindent \textbf{Solution:}\\
+First,i observe that i can freely delete some element because if given $x$ and $y$ if i want delete $y$ then i can just pick $z=x$,then i observe that every operation decrease $1$ element,so if $n<m$,obviously no solution.\\
+Now i don't know how to solve for $n>m$ so i assume that $n==m$,after that i observe if we sorted $a$ and $b$,and let $i$ be the first index such that $a_i\ne b_i$ then if $a_i>b_i$ then definitely no solution,because i only can pick $a_j$ such that $j<i$ try to combine with $b_i$ but according to pigeon principle,i need a more smaller $a_k$ to cover $b_j$ thus if $a_i>b_i$ there is no solution,until now i observe that we can just pick the largest $m-n$ element into a new array $C$,so if $a_i<b_i$ we can pick the element from $C$ such that $a_i<b_i\le c_k$,if no such $c_k$ then no solution,here you need to be careful,you need to run in reverse order otherwise it will got some chosen problem.For example if there is exactly two such $c_k$ which is the largest and second largest element from $C$ then if $a_i$ choose the largest one,then $b_{i+1}\le c_{last}$ may can't choose
+\\
+\noindent \textbf{You need to know after this:}\\
+Try to give some greedy operation and simulation then you may observe some pattern
+\end{document}

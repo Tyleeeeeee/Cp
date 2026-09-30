@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 1741 E}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/problemset/problem/1741/E
+
+\noindent \textbf{Solution:}\\
+This problem is very classic for two direction dp,if we reduce the problem,such that the length of segment always at the right of segment,then we can just define $dp_i$,if $dp_i=1$ mean first $i$ element can fulfill the criterion,otherwise $dp_i=0$,but since length not always in right of segment,but you just can use same $dp$ defination,but you need to add $dp_{i+b[i]}|=dp_{i-1}$ when you mean this kind of problem,first $i$ element may affect the element over $i$ then since $dp_i$ is represent of first $i$ element,if you keep storing the answer at $dp_i$ which is wrong in logic,so you can just store in the index which greater than $i$ then you found that problem is solved
+\\
+\noindent \textbf{You need to know after this:}\\
+\end{document}

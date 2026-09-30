@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{TOPC 2026 D}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/gym/106728/problem/D
+
+\noindent \textbf{Solution:}\\
+1.First reduce the problem,assume that only $a$ array,then you can observe that,the last element matter,the number of $a_n$ is listen $c_{a_n}$ times,thus all $c_{a_i}\ge c_{a_n}\text{ , }\forall i<n$,if you observe you will found that this mean $c$ is an non increasing array\\
+2.Now back to the original problem,we define $c_i=x_i+y_i$,and $x_i$ and $y_i$ mean listen times of song $i$ at $a$ and $b$,then from [1.],we have $x_{a_i}\ge x_{a_{i+1}}$ and $y_{b_i}\ge y_{b_{i+1}}$ we can expand $y_i$ as $c_i-x_i$ then the constraints become 
+\begin{align*}
+	y_{b_i}&\ge y_{b_{i+1}}\\
+	c_{b_i}-x_{b_i} &\ge c_{b_{i+1}}-x_{b_{i+1}}\\
+	c_{b_i}-c_{b_{i+1}} &\ge x_{b_i}-x_{b_{i+1}}\\
+\end{align*}
+\\
+3.The above style of constraints have a classic algorithm called \textbf{difference constraints},and it can be solve by spfa/bellman ford
+
+\noindent \textbf{You need to know after this:}\\
+spfa/bellmanford\\
+difference constraints
+\end{document}

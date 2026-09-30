@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2267 C}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2267/problem/C
+
+\noindent \textbf{Solution:}\\
+1. First we observe that,if pirate can stole some coins from $a_i$ then he can stole all,because $g=\gcd(x,a_i)> 1$ and obviously $a_i$ is a multiple of $g$,thus $a_i$ will be stolen completely by pirate,and we repeat this operation to find another $a_j$ and so on,as you can see,all the element been chosen form a set $S$ and every element in $S$ plus $x$ have gcd greater than $1$,and we don't need to know the gcd of the $S$,we can just check by the prime divisor,because if gcd of $S$ is multilple,since multiple is also divide by prime factor,thus we can just check all the prime divisor of $x$,and there is at most $7$ distinct prime divisor when $x\le 3\cdot 10^5$,and in the optimal set $S$,we can guarantee that at least one $p$ from prime divisor of $x$ can divide all element in $S$,otherwise gcd of $S$ will be $1$,so you just use at most $7$ prime divisor to check does $a_i$ is a multiple of $p$,if yes,count it into $sum+=a_i$,and choose the maximum sum
+\\
+\noindent \textbf{You need to know after this:}\\
+gcd\\
+linear sieve\\
+prime factorization
+
+\end{document}

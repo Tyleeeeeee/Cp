@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 1907 E}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/problemset/problem/1907/E
+
+\noindent \textbf{Solution:}\\
+Given two non-negative integers $x$ and $y$,if $y$ is the subset of $x$ if and only if $\lfloor \frac{x}{10^i}\rfloor \mod 10 \ge \lfloor \frac{y}{10^i}\rfloor \mod 10$,thus in this problem we regard $b+c$ as a number then the problem reduce to $a$+$(a-x)$=$n$ and $ds(a)+ds(a-x)=ds(n)$ and it can be show that $x$ must be subset of $a$ such that the criterion will establish simultaneously,now the second problem is how many possible combination of $b+c=x$ and $ds(b)+ds(c)=ds(x)$,and obviously this problem same as the previous one,$x-b$ must be the subset of $b$ to fulfill to criterion,let $c_i$ is the $i-th$ number count from right to left of $b$ then the combination with be $\prod (c_i+1)$,thus we can use this ot count,but actually it can be count by $dp$ \\ 
+Define $dp_i$ as the number of triple when using first $i$ number of decimal representation of $n$(count from right to left) then we have $dp_i=(c_i+1)\cdot dp_{i-1}$\\
+\\
+\noindent \textbf{You need to know after this:}\\
+$digitsum(x)=x\mod 9$\\
+$digitsum(x+y)=digitsum(x)+digitsum(y)-9\cdot (\text{times of carry})$
+\end{document}

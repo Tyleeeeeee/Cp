@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2267 D}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2267/problem/D
+
+\noindent \textbf{Solution:}\\
+When you the problem is about some operation on an element and the previous or after element of it,you should try to think,$\textbf{dif array,prefix,position parity}$,in this problem,we can observe that operation always swap $a_i$ and $a_{i+2}$,which mean the element always swap in same parity of position,so define $b_i$ as the parity of $i$ at the initial permutation,$b_i=0$ mean even,$b_i=1$ mean odd,then another observation is,$1$ is the smallest number thus $1$ can only be position $1$ or position $n$,so we can repeat the operation below to construct the answer,initial have range $[1,n]$ and $cur=1$,cur is the number need to place now,then for sure for any $x$ it should always place at the border of the interval,so we can check,does the parity of the interval same as $b_x$,there is $3$ possible situation,if parity of left and right border same as $b_x$,you can freely choose any,if parity of left or right same as $b_x$,then you just place at the same parity position,if left and right does not have the same parity with $b_x$ then the answer is no
+\\
+\noindent \textbf{You need to know after this:}\\
+two pointer\\
+position parity\\
+When you see operation on previous/after element of some element,try to think dif array/prefix array/position parity
+
+\end{document}

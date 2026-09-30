@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2256 C}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2256/problem/C
+
+\noindent \textbf{Solution:}\\
+This strategy is come from observation,i observe that if all of the lep keep the potato until the last round should be the best strategy.The reason is if lep keep the potato until the last round that we can ensure that the lep before it can't give him potato and he may give the next person potato in the last round,this lead me assume that everyone keep the potato until last round is best strategy\\
+\\
+The proof is simple,let $R$ and $B$ be the final person red team and blue team got potato in this strategy,then obviously if red team obey this strategy but blue team not,then if at least one blue team give the potato to red team,let that red member be $u$,then if $u$ is possible to give the next person potato in last round then obviously number of blue team got potato will be $B+1$,if not then it will be $B$,so in the opposite direction same for red team,thus this will be best strategy for both\\
+\\
+Friendly remind,best strategy for red team may not be the best strategy for both,for all strategy of red team chosen,it exist a counter strategy from blue team,since we consider both in best strategy so we always assume that when red team choose any strategy,blue team will always choose the counter strategy thus,the strategy above is best for both
+
+
+\end{document}

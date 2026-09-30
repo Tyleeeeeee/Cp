@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{Proof of spfa}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+spfa is a advanced algorithm of bellman ford algorithm
+
+\noindent \textbf{Proof of correctness:}\\
+Define the source vertex $s$ as the first layer $l_0$,we can prove that each layer no more than $E$ edges will be tranversal and no more than $V$ layer,thus the final time complexity is $O(V\cdot E)$\\
+The idea same as relaxation,when define the shortest from $s$ to $i$ using $L$ edges then the path look like this $s\rightarrow x_1 \rightarrow x_2 \rightarrow \dots x_{L-1}\rightarrow i$ then obviously $x_1$ will have the correct $d_{x_1}$(distance from source to $x_1$),similar for $x_2$ then obviously after $l_L$ no more vertex will update $d_i$,thus if an vertex $i$ update more than $V-1$ then it must exist negative cycle
+
+\noindent \textbf{You need to know after this:}\\
+\end{document}

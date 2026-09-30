@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2248 C}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2248/problem/C
+
+\noindent \textbf{Solution:}\\
+First i observe that if $[l,r]$ is delete in one operation then there will not exist such a range $[l',r']$ such that $l'<l \text{ and } r<r'$,it can prove by mathematical induction,if exist such an range,directly delete the range will get a better score,and also does not exist such a range intersect with $[l,r]$,because either that range or our range,the first range to delete will cause another range left only $1$ occurrence of some number $x$,this lead me observe that define a range $[pos_{x_{first}},pos_{x_{last}}]$ for every number $x$ then i need to pick some range such that no range overlap,and all other element produce $1^2$,this is the classic dp problem for no range overlap to maximize/minimize something,so go dp
+\\
+\noindent \textbf{You need to know after this:}\\
+dp\\
+Try to give some greedy operation and simulation then you may observe some pattern
+\end{document}

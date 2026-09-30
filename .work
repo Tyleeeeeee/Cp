@@ -1,0 +1,15 @@
+all : cpl run
+
+fn?=b.cpp
+fn_ne=$(basename $(fn))
+IN?=""
+OUT?=output.txt
+cpl : $(fn)
+	g++ -std=c++20 $(fn) -o $(fn_ne)
+
+run : $(fn_ne)
+ifeq ($(IN),"")
+	./$(fn_ne)
+else
+	./$(fn_ne)<$(IN)>$(OUT)
+endif

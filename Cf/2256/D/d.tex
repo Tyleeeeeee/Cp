@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2256 D}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2256/problem/D
+
+\noindent \textbf{Solution:}\\
+The solution always come from a critical observation,if we compress the consecutive $0$ or $1$ into a number,we will get a array $a$ with length $m$ and $a_i$ mean the length of the $i-th$ segment,after this apparently for any binary string we can construct such an array,and for any two distinct binary string their array is different,then the problem reduce to how many distinct array can exist in the operation.WLOG we assume that the first segment in binary string $s$ be $0$ then we can observe that the even position will always be $0$ segment (index-$0$) and odd position always $1$ segment,and when we do the operation,we always choose segment in same parity,and after that the initial segment will increase/decrease some number and the ending segment will also decrease/increase some number,and the number between initial and ending position will be reverse,but from this example we found that we can decrease some unit from a segment and give it to another same parity segment,thus we can make the segment between initial segment and ending segment back to the original pattern,thus we found that different parity is independent,in otherword the number change in even position and odd position is independent,then the answer become $c_{odd}\cdot c_{even}$\\
+\\
+WLOG,we introduce how to count $c_{odd}$,we can apply same method on $c_{even}$,let the number of segment of $0$ in array be $a_0$ and the total appearance of $0$ be $b_0$,then the problem become for $b_0$ i need to divide it into $a_0$ segment and each segment at least contain one $0$,the combination can be count as $C^{b_0-1}_{a_0-1}$,so the answer is $C^{b_0-1}_{a_0-1}\cdot C^{b_1-1}_{a_1-1}$
+
+\end{document}

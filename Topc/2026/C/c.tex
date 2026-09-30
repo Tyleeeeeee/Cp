@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{TOPC 2026 C}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/gym/106728/problem/C
+
+\noindent \textbf{Solution:}\\
+1.First consider bfs order,define $0$ as root then child of $v$ is $[v\cdot k+1,v\cdot k+k]$ and $p_v$ parent of $v\text{ is }\lfloor \frac{v-1}{p}\rfloor$(this can be simple prove by mathematical induction),and define $e_i$ and $dp_i$ as the weight of the edge between $i$ and $p_i$,the weight from $i$ to the leaf node respectively\\
+\\
+2.We go from top to bottom and update from bottom to top,tranversal logic as,initially at $0$,and assume that we curently at $v$ then check $\min dp_i \text{ and }i\in[v\cdot k+1,v\cdot k+k]$,and go to the vertex $u$ such that $u$ is child of $v$ with $dp_{\min}$,and record this route,after tranversal start from last vertex of this route,update each vertex $u$ in this route with $e_u+=w$ and $dp_u=\min dp_c+e_c\text{ , }c\in \text{ child of u}$,this can be done by min segment tree
+
+\noindent \textbf{You need to know after this:}\\
+segment tree\\
+dp
+\end{document}

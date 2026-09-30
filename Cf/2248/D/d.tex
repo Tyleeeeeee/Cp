@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2248 D}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2248/problem/D
+
+\noindent \textbf{Solution:}\\
+I observe that for range $[l,r]$,we can separate the string into piece $00,01,10,11$ and $c_{00},c_{01},c_{10},c_{11}$ represent their occurrence,and i observe that $00$ and $11$ can directly delete and also can combine to $01$ or $10$,now i found that $01$ and $10$ can't directly delete ,it must combine with other,so this lead me have a greedy solution,WLOG assume that $c_{01}\ge c_{10}$ then obviously if $c_{01}-c_{10}\le c_{11}+c_{00}$ then answer always exist,just use the $c_{10}$ to combine with first $c_{10}$ of $01$ and the residue $c_{01}-c_{10}$ combine freely with $00\text{ or }11$,and the residue delete itself,but how about if $c_{01}-c{10}>c_{11}+c_{00}$?It can be show that no solution\\
+\\
+Proof:\\
+WLOG assume that $c_{01}>=c_{10}$ and $c_{01}>c_{00}+c_{11}+c_{10}$ then according to pigeonhole principle,let $k=c_{00}+c_{11}+c_{10}$,we already prove that we can delete $k$ of $01$,if $c_{01}>k$ this mean there is some combination for using no more than $n=c_{00}+c_{11}+c_{10}$ and we can delete over $n$ of $01$,but actually it can't exist,the reason is if such combinaton exist,string $s$ will contain more than $n$ of $0$ which mean over half,and string $t$ will also contain over half of $1$,then the mode of string $s$ is $0$ and for $t$ is $1$,thus this combination can't exist
+\\
+\noindent \textbf{You need to know after this:}\\
+\end{document}

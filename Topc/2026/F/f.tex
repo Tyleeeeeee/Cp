@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{TOPC 2026 F}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/gym/106728/problem/F
+
+\noindent \textbf{Solution:}\\
+1.First come a native solution,let $(u,v)$ is two connected vertex,then if all of $v$ connected to $u$ can't reach the $1$ then $u$ definitely can't reach $1$,but if some of the $v$ can reach $1$ how we judge that does $u$ can reach $1$ or not?Thus we need a new variable $d_i$,it define as the latest departure time such that $i$ can reach $1$,so obviously given $(u,v,t,h)$ if $d_v\ge t$ then $u$ can reach $1$ by using this bridge\\
+\\
+2.From [1.] we can observe at the end $i$ can reach $1$ if and only if $d_i\ge 0$,so all the rest is how to construct $d_i$,obviously bfs is not working in this situation,the reason is normal bfs may using some haven't correct data,and this is similar to relaxation of the shortest path,so we can try djk and the truth is djk work\\
+\\
+3.Algorithm like this,first define $1$ as source vertex and $d_1=\infty$ and all other vertex $d_i=-\infty$,then run djk,but the different is the $d_{\max}$ is heap in always the final value of some vertex,so pop out the $d_{\max}$ and the vertex $u$ and to update other vertex connected to it,and repeat,the transition is update by formula given $(u,v,t,h)$ then $d_v=\max(d_v,\min(d_u,h)-t)$
+
+\noindent \textbf{You need to know after this:}\\
+djk\\
+shotest path
+\end{document}

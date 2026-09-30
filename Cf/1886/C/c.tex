@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 1886 C}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/problemset/problem/1886/C
+
+\noindent \textbf{Solution:}\\
+It can be show that,$s_{i}$ is only depend on $s_{i-1}$,in otherword define an array $A$,and $A[i]$ is the index of character will be delete in $i-th$ operation,and $A_k$ is the $A$ array of length $k$,then first $k$ element of $A_k$ is definitely same to first $k$ element of $A_{k+1}$,then we can use directly use linear/binary search to calculate $pos$ is located at which string,assume that at $i+1-th$ string which is $s_{i+1}$ then the problem reduce to,i need to delete $i$ character from $s_1$,if you do more observation,define an inversion of string $s$ is the number of $s[j]>s[j+1]$ then we always need to delete the first inversion such that get the lexicographical smaller string $s_i$,thus there is some ways to do this,the simple way is monotonic stack\\
+\\
+\noindent \textbf{You need to know after this:}\\
+If you need to do an operation,to delete some unsatisfy element and the element will only affect the direct previous/next element then try monotonic stack
+
+\end{document}

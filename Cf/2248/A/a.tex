@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2248 A}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2248/problem/A
+
+\noindent \textbf{Solution:}\\
+It can be show that either Alice or Bob,delete the first occurrence of corresponding character is best,i just prove Alice,same method to Bob.\\
+\\
+Proof:\\
+Let the occurrence of $0$ at ${i_1<i_2<\dots <i_k}$,and we choose $j$ rather than $i_1$,then define $S_{i_1}$ and $S_j$ be two different string when we delete character at $i_1$ and $j$,then all character before $j$ and after $i_1$ is remain unchange,and $S[j\dots i_1-1]$ is from $S_{i_1}$ and $S[j+1\dots i_1]$ is from $S_j$ and you can see that start from $i_1$ with $i_2$ ,and so on,if there is some $1$ between $i_{x}$ and $i_{x+1}$ then $S_{i_1}>S_j$ or if not such $1$ then $S_{i_1}=S_j$ thus delete $i_1$ is always the best,same idea for Bob
+\\
+\noindent \textbf{You need to know after this:}\\
+
+\end{document}

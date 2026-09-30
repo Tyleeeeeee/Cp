@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{TOPC 2026 G}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/gym/106728/problem/G
+
+\noindent \textbf{Solution:}\\
+1.Problem guarantee that $h_i$ is pairwise different,then we can hasing it into range $[1,n]$\\
+2.And from the statement about $s_i$,you can know that $s_i$ is an inversion of some element in permutation,so $s$ is an inversion array,so think out of the box,if the answer exist,mean there is a permutation with given inversion array,it definitely can form from indentity permutation\\
+3.We sort the $s$,and we define an inversion array $d$,initial all $d_i=0$,if we can make $d$ equal to $s$ then the current permutation is the answer,we loop backward,start from the $s_n$ until $s_1$,let the current number be $i$,if $i-s_i>1$ then we can just direct let number $i$ move forward $s_i$ steps(toward position $1$) then obviously all other $d_j\text{ , }\forall j\ne i$ remain unchange,and $d_i\rightarrow s_i$,if exist an $i$ such that $i-s_i<1$ then no solution\\
+\\
+Proof\\
+Claim:If exist $i$ such that $i-s_i<1$ no solution\\
+The proof is simple,when we making $d_i \rightarrow s_i$ we actually is paring element from permutation and inversion array,if current we are try to making $d_i=s_i$ then if $i-s_i<1$,and $i$ is the largest element at the first $i$ element,if $i$ can't matching with $s_i$ which mean we need to use a $j\text{ and }j>i$ and let $j$ to form $s_i$ but by the pigeonhole principle we need to use one of the first element to match with $s_j$,but since we already sort the $s$ thus $s_j\ge s_i$ and the largest element from first $i$ element is $i$,and since $i-s_i<1$ then obviously $i-s_j<i-s_i<1$,so no one can pair we $s_j$,so we can conclude that in this situation,no such permutation
+
+\noindent \textbf{You need to know after this:}\\
+permutation\\
+inversion\\
+greedy
+\end{document}

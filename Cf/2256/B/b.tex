@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 2256 B}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/contest/2256/problem/B
+
+\noindent \textbf{Solution:}\\
+This problem can be solve by $dp$ but it have alternating solution,according to the restriction we have $s_{i-1}+s_i\ne s_i+s_{i+1}$ then $s_{i-1}\ne s_{i+1}$,so the position off odd and even is independent,thus the answer is $c_{odd} \cdot c_{even}$ and the truth is there only $4$ possible solution which is ${0,1,2,4}$,WLOG we just discuss position odd,if the first element of odd is decided then all of the rest element must be alternating,so if exist two consecutive $0$ or $1$ then $c_{odd}=0$,otherwise if first element of odd is $?$ then answer equal to $2$ otherwise equal to $1$
+
+\end{document}
