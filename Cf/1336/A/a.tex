@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 1336 A}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/problemset/problem/1336/A
+
+\noindent \textbf{Solution}\\
+First we can observe that,if a vertex $u$ been chosen then all of it descendant must be chosen,otherwise we can greedily pick the descendant of $u$,another observation is assume that all of the descendant of $u$ been chosen,if we choose $u$ what will happen?\\
+Define $sub_u$ and $d_u$ (0-based) , as subtree tree size of $u$ and depth from root to $u$ then obviously total value will increase $val_u=d_u-sub_u+1$,and apparently $val_{p_u}>val_{u}$,thus we can just sort the $v_i$ and greedily pick the $k$ largest element
+
+\noindent \textbf{You need to know after this:}\\
+\end{document}

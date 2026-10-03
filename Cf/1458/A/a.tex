@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{\textbf{CF 1458 A}}
+\author{}
+\date{Last update : \today}
+
+\maketitle
+
+\noindent \textbf{Description:}\\
+https://codeforces.com/problemset/problem/1458/A
+
+\noindent \textbf{Solution}\\
+This use a gcd properties $\gcd(a,b)=\gcd(a,a-b)\text{ , }\forall a\ge b$,then 
+\begin{align*}
+	\gcd(a_1+b_j,a_2+b_j)&=gcd(a_1+b_j,a_2-a_1)\\
+	\gcd(a_1+b_j,a_2-a_1,a_3+b_j)&=\gcd(a_1+b_j,a_2-a_1,a_3-a_1)\\
+	\gcd(a_1+b_j,a_2-a_1,a_3+b_j,\dots,a_n+b_j)&=\gcd(a_1+b_j,a_2-a_1,a_3-a_1,\dots,a_n-a_1)
+\end{align*}
+Thus we just precompute $g=\gcd(a_2-a_1,a_3-a_1,\dots,a_n-a_1)$,then we can use $O(1)$ to construct the answer
+
+\noindent \textbf{You need to know after this:}\\
+\end{document}
